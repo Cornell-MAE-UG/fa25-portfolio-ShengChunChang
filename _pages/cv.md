@@ -1,74 +1,66 @@
 ---
 layout: default
-title: <Your Name> - Curriculum Vitae
+title: Angus (Sheng-Chun) Chang - Curriculum Vitae
 permalink: /cv/
 ---
 ## Curriculum Vitae
 
-[Download my CV]({{ "/assets/CV.pdf" | relative_url }}) in PDF format.
+[Download my resume]({{ "/assets/resume.pdf" | relative_url }}) in PDF format.
 
 
-**Email:** [netID@cornell.edu](mailto:netID@cornell.edu) | | | **Phone:** +123 456 7890
+**Email:** [sc3295@cornell.edu](mailto:sc3295@cornell.edu) | | | **Phone:** +1 978 530 8356
 
 ---
 
 #### Objective
-Aspiring engineering student with a strong foundation in.... Passionate about ... and eager to apply my knowledge in real-world applications.
-
+Mechanical engineering student focused on end-to-end product development, from problem
+framing to CAD, prototyping. Skilled in hands-on 3D printing and CNC experience, and test
+planning to close the loop between analysis and hardware. Comfortable with GDT, DFM/DFA,
+and BOM creation. Proficient in MATLAB and Python for analysis and test automation.
 ---
 
 #### Education
 - **Cornell University**  
-  *Bachelor of Science in Mechanical and Aerospace Engineering*  
-  GPA: 3.8/4.0 | Graduation: Month, Year
+  *Bachelor of Science in Mechanical Engineering*  
+  Expected Graduation Date: May, 2027
 
-- **[High School Name]**  
+
+- **Northfield Mount Hermon School**  
   *High School Diploma*  
-  Graduation: [Month, Year]
+  Graduation Date: May, 2023
 
 ---
 
 #### Skills
-- **Software:** Autodesk Fusion 360, SolidWorks, ANSYS  
-- **Programming:** Python, MATLAB  
-- **Tools:** 3D Printing, Laser Cutting  
+- **Software:** SolidWorks, Autodesk Fusion 360, Onshape, ANSYS  
+- **Programming:** Arduino, Python, Java, C++, MATLAB
+- **Tools:** 3D Printing, Laser Cutting 
 
 ---
 
-#### Projects
-- **[Project Title]**:  
-  *[Short Description]*  
-  - Key Achievement 1  
-  - Key Achievement 2  
+#### Research & Publication
+- **An "Artifical leaf" that can generate oxygen and electricity**:  
+  *[Patented in Taiwan & Germany]*  
+  *[Published on International Journal of High School Research, Vol.5, Issue 3]*  
+  
 
-- **[Project Title]**:  
-  *[Short Description]*  
-  - Key Achievement 1  
-  - Key Achievement 2  
+- **Fabric structure utilizing protein denaturation and adhesion**:  
+  *[Patented in Taiwan]*  
 
----
-
-#### Work Experience
-- **[Company Name] - Intern**  
-  [Month, Year] - [Month, Year]  
-  - Responsibility 1  
-  - Responsibility 2  
+- **Tunable reflectance based on phase change metamaterial for structural color filter**
 
 ---
 
 #### Achievements & Certifications
-- [Certification Name], [Issuing Organization], [Year]  
-- [Achievement Name], [Competition/Event], [Year]  
+- Remote Pilot (FAA Part 107), FAA, 2025 
+- Lifeguard/CPR/AED, American Red Cross, 2025  
+- Total of 3 Utility Patents in Taiwan, Germany
 
 ---
 
 #### Extracurricular Activities
-- Member of [Club/Organization Name]  
-- Volunteer for [Event/Organization Name]  
+- Member of Cornell University Autonomous Drone Project team
+- Volunteer for Taipei Critical Child Association - Charity Ambassador, Taipei, Taiwan
 
 ---
 
-#### References
-Available upon request.
-
----
