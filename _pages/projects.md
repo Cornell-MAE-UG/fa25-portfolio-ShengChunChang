@@ -1,9 +1,23 @@
 ---
 layout: default
-title: <Your Name> - Portfolio
+title: Projects
 permalink: /projects/
 ---
-
+## Independent Projects
+<div class="gallery-container">
+  <div class="project-gallery">
+    {% for indproject in site.indprojects %}
+      <div class="gallery-item">
+        <a href="{{ indproject.url | relative_url }}">
+          <img src="{{ indproject.image | relative_url }}" alt="{{ indproject.title }}" />
+          <p>{{ indproject.title }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+---
+## Collaborative Projects (school required)
 <div class="gallery-container">
 <div class="project-gallery">
     {% for project in site.projects %}
@@ -16,3 +30,4 @@ permalink: /projects/
     {% endfor %}
 </div>
 </div>
+
