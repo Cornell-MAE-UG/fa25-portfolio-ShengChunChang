@@ -31,5 +31,3 @@ EXTR V1 is a conceptual high-speed racing drone that I fully designed in CAD, in
 <div style="clear: both;"></div>
 
 
-
-[View Full Research paper]({{ "/assets/Chang.ShengChun.01940.pdf" | relative_url }}) in PDF.
