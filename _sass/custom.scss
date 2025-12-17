@@ -1,9 +1,10 @@
-// Default to light theme
+/* =========================
+   THEME VARIABLES
+   ========================= */
 $primary-color: #3a3f58;
 $background-color: #f7f8fa;
 $text-color: #333;
 
-// Set theme colors based on the color_scheme variable
 @if $color_scheme == 'dark' {
   $primary-color: #333;
   $background-color: #000;
@@ -18,57 +19,353 @@ $text-color: #333;
   $text-color: #1e0101;
 }
 
+/* =========================
+   GLOBAL BASE
+   ========================= */
+:root{
+  --nav-h: 76px;      /* adjust if top bar height changes */
+  --contact-h: 64px;  /* adjust if bottom contact bar height changes */
+}
 
-.navbar, h1, h2, h3, h4, h5, h6 {
+.navbar, h1, h2, h3, h4, h5, h6{
   font-family: 'Merriweather', serif;
   font-weight: 700;
 }
 
-h1 {
-  margin-bottom: 25px;
-}
-
-body {
-  font-family: "Open Sans", 'Montserrat', 'Helvetica Neue' sans-serif;
+body{
+  font-family: "Open Sans", 'Montserrat', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   background-color: $background-color;
   color: $text-color;
   margin: 0;
   padding: 0;
+
+  /* keep content visible under fixed bars */
+  padding-top: var(--nav-h);
+  padding-bottom: var(--contact-h);
 }
 
-header, footer {
-  padding: 10px 5px;
-  background: $primary-color;
-  color: $background-color;
+p{ max-width: 75ch; }
+
+/* =========================
+   LAYOUT CONTAINER
+   ========================= */
+.container{
+  max-width: 1100px;
+  padding-left: 28px;
+  padding-right: 28px;
 }
 
-header {
-  margin-bottom: 40px;
+@media (max-width: 768px){
+  .container{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
-footer {
+/* =========================
+   FIXED TOP BAR (ALL PAGES) - PURE BLACK
+   ========================= */
+header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 2000;
+  background: #000 !important;
+  margin: 0;
+  padding: 0;
+}
+
+header .navbar{
+  background: #000 !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+/* bigger nav links (Home / Projects / CV) */
+.navbar .nav-link{
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.65rem 0.9rem;
+}
+
+.navbar .navbar-brand{
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+/* kill any old transparency behavior */
+.home .navbar.scrolled{
+  background: #000 !important;
+  backdrop-filter: none !important;
+}
+header::before{ content: none !important; }
+
+/* =========================
+   HERO
+   ========================= */
+.hero{
+  position: relative;
+  min-height: 42vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.hero-media{
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+}
+
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.hero-content{
+  position: relative;
+  z-index: 2;
   text-align: center;
+  color: #fff;
+  padding: 70px 24px 50px;
+}
+
+.hero-kicker{
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.hero-name{
+  margin: 0 0 22px;
+  font-size: clamp(2rem, 6vw, 5rem);
+  letter-spacing: 0.06em;
+}
+
+.hero-cta{
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.hero-btn{
+  display: inline-block;
+  padding: 14px 34px;
+  border-radius: 999px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.hero-btn:hover{ opacity: 0.9; }
+
+/* space below banner before first section heading */
+h2{ margin-top: 28px; }
+
+/* =========================
+   IMAGES
+   ========================= */
+.profile-image{
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  float: left;
+  margin: 10px 34px 22px 18px; /* left margin controls distance from left */
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 768px){
+  .profile-image{
+    float: none;
+    margin: 10px auto 18px;
+  }
+}
+
+.project-image{
+  float: left;
+  margin: 20px 25px 25px 0;
+  max-width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+}
+
+/* Inline images helper */
+.inline-image{
+  max-width: 350px;
+  margin: 0px 25px 15px 25px;
+  vertical-align: top;
+
+  &-l{
+    @extend .inline-image;
+    float: left;
+    margin-left: 0;
+  }
+
+  &-r{
+    @extend .inline-image;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+/* =========================
+   PROJECTS GRID (organized + uniform)
+   ========================= */
+main.container{
+  max-width: 1200px !important;
+  padding-top: 28px;
+}
+
+.project-gallery{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 22px;
+  padding: 22px 0;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+@media (min-width: 1100px){
+  .project-gallery{
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 700px){
+  .project-gallery{
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-item{
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+.gallery-item a{
+  text-decoration: none;
+  display: block;
+}
+
+.gallery-item img{
+  width: 100%;
+  height: 350px;        /* uniform size for BOTH sections */
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+}
+
+.gallery-item p{
+  margin: 12px 0 0;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: $text-color;
+}
+
+.gallery-item:hover{
+  transform: translateY(-2px);
+}
+
+/* =========================
+   FOOTER (fixed bottom contact bar)
+   ========================= */
+.site-footer{
   margin-top: 40px;
-  font-size: 0.9em;
+  font-size: 0.95em;
+  padding: 0;
 }
 
-.container {
-  max-width: 600px;
+/* fixed contact bar */
+/* Fixed bottom contact bar layout */
+.site-footer .footer-contact{
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 2000;
+  background: #000 !important;
+  padding: 18px 0;
 }
 
-.project-item img {
+.site-footer .footer-contact,
+.site-footer .footer-contact a,
+.site-footer .footer-contact span,
+.site-footer .footer-contact i{
+  color: #fff !important;
+}
+
+/* inner layout: left group + right copyright */
+.footer-contact-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.footer-left{
+  display: flex;
+  align-items: center;
+  gap: 14px;        /* space between LinkedIn | Email */
+  flex-wrap: wrap;  /* allows wrap on smaller screens */
+}
+
+.footer-divider{
+  opacity: 0.45;
+}
+
+.footer-right{
+  font-weight: 400 !important;  /* normal */
+  opacity: 0.9;                 /* keep (optional) */
+  font-size: 0.95rem;           /* keep (optional) */
+}
+
+
+/* make links clean */
+.site-footer .footer-contact a{
+  text-decoration: none;
+}
+.site-footer .footer-contact a:hover{
+  text-decoration: underline;
+}
+
+/* mobile: stack left group above copyright */
+@media (max-width: 768px){
+  .footer-contact-inner{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-right{
+    white-space: normal;
+  }
+}
+
+
+/* =========================
+   SMALL UTILITIES (kept)
+   ========================= */
+.project-item img{
   max-width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
-.project-item h3 {
+.project-item h3{
   margin-top: 15px;
   font-size: 1.25em;
 }
 
-.btn {
+.btn{
   display: inline-block;
   padding: 10px 20px;
   color: $background-color;
@@ -77,7 +374,8 @@ footer {
   transition: background 0.3s;
 }
 
-.highlight {
+/* code highlight */
+.highlight{
   background-color: #2d2d2d;
   color: #e0e0e0;
   padding: 10px 0;
@@ -85,122 +383,20 @@ footer {
   border-radius: 5px;
   overflow-x: auto;
 }
-
-.highlight .k { color: #c792ea; }
+.highlight .k  { color: #c792ea; }
 .highlight .nb { color: #82aaff; }
-.highlight .s { color: #c3e88d; }
+.highlight .s  { color: #c3e88d; }
 .highlight .mi { color: #f78c6c; }
-.highlight .c { color: #5c6370; }
-.highlight .p { color: #89ddff; }
-.highlight .o { color: #ff5370; }
+.highlight .c  { color: #5c6370; }
+.highlight .p  { color: #89ddff; }
+.highlight .o  { color: #ff5370; }
 
-.profile-image {
-  float: left;
-  margin: 20px 25px 25px 0;
-  width: 150px;
-  vertical-align: top;
-}
-
-.project-image {
-  float: left;
-  margin: 20px 25px 25px 0;
-  max-width: 200px;
-  vertical-align: top;
-}
-
-.inline-image {
-  max-width: 350px;
-  margin: 0px 25px 15px 25px;
-  vertical-align: top;
-
-  &-l {
-    @extend .inline-image;
-    float: left;
-    margin-left: 0;
-  }
-
-  &-r {
-    @extend .inline-image;
-    float: right;
-    margin-right: 0;
-  }
-}
-
-.profile-image, .project-image {
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-.gallery-container {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-}
-
-.project-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 100%;
-}
-
-.gallery-item {
-  text-align: center;
-  transition: transform 0.3s ease;
-  max-width: 250px; 
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 85%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-}
-
-.gallery-item p {
-  margin: 13px 0;
-  font-size: .9rem;
-  color: $text-color;
-}
-
-.gallery-item a {
-  text-decoration: none;
-}
-
-.gallery-item:hover {
-  transform: scale(1.05); 
-}
-
-.project-image {
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.back-arrow {
-  display: inline-block;
-  font-size: 1.1em;
-  color: #686d85; 
-  text-decoration: none;
-  margin-bottom: 1em;
-  font-weight: bold;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.back-arrow:hover {
-  color: #3a3f58; 
-  transform: translateX(-4px);
-}
-
-hr {
-  margin: 3rem 0;          // space above & below the line
-  border: 0;
-  border-top: 1px solid #000000;  // the horizontal line
-}
-
+/* =========================
+   QUICK ADJUST NOTES (edit these)
+   ========================= */
+/* - Top bar height: change :root --nav-h
+   - Bottom contact height: change :root --contact-h
+   - Hero height: change .hero min-height
+   - Projects image height: change .gallery-item img height
+   - Profile picture size: change .profile-image width/height
+*/
