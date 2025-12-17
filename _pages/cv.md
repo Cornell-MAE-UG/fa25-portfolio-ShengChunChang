@@ -8,7 +8,7 @@ permalink: /cv/
 [Download my resume]({{ "/assets/resume.pdf" | relative_url }}) in PDF format.
 
 
-**Email:** [sc3295@cornell.edu](mailto:sc3295@cornell.edu) | | | **Phone:** +1 978 530 8356
+**Email:** [angus23232323@gmail.com](mailto:angus23322323@gmail.com) | | | **Phone:** +1 978 530 8356
 
 ---
 
