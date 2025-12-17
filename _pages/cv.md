@@ -5,7 +5,7 @@ permalink: /cv/
 ---
 ## Curriculum Vitae
 
-[Download my resume]({{ "/assets/resume.pdf" | relative_url }}) in PDF format.
+[Download my resume]({{ "/assets/Resume.pdf" | relative_url }}) in PDF format.
 
 
 **Email:** [angus23232323@gmail.com](mailto:angus23322323@gmail.com) | | | **Phone:** +1 978 530 8356
