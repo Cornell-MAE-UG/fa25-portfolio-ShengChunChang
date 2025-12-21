@@ -400,3 +400,90 @@ main.container{
    - Projects image height: change .gallery-item img height
    - Profile picture size: change .profile-image width/height
 */
+.back-link,
+.back-link:visited{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  color: #111 !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  padding: 0.35rem 0;
+  margin: 0.75rem 0 1.25rem;
+  width: fit-content;
+
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.back-link i{
+  font-size: 1.1rem;
+  transition: transform 160ms ease;
+}
+
+.back-link:hover{
+  opacity: 0.9;
+  transform: translateY(-1px);
+  text-decoration: none !important;
+}
+
+.back-link:hover i{
+  transform: translateX(-8px);
+}
+
+.back-link:focus-visible{
+  outline: 3px solid rgba(0,0,0,0.25);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+//Image format
+/* Responsive chart layout */
+.chart-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin: 18px 0 8px;
+  align-items: start;
+}
+
+.chart-grid img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* Contain floats inside project pages */
+.project-content{
+  overflow: auto;   /* contains floats */
+}
+
+/* Clear floats before headings and key blocks so layout doesn't jump */
+.project-content h2,
+.project-content h3,
+.project-content hr,
+.project-content .back-link,
+.project-content .back-arrow{
+  clear: both;
+}
+
+/* Optional: keep paragraphs from wrapping beside a float for too long */
+.project-content p{
+  clear: none;
+}
+
+/* Turn off floats on smaller screens (prevents half-width weird wrapping) */
+@media (max-width: 900px){
+  .project-content .project-image,
+  .project-content .inline-image-l,
+  .project-content .inline-image-r{
+    float: none !important;
+    display: block;
+    margin: 14px 0 18px 0 !important;
+    max-width: 100%;
+  }
+}

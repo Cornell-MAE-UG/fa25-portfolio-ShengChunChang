@@ -6,10 +6,15 @@ layout: default
 
 <p><img src="{{ page.image | relative_url }}" alt="{{ page.imagealt }}" class="project-image" /></p>
 
-{{ content }}
+<div class="project-content">
+  {{ content }}
+</div>
+
 
 <p><strong>Technologies Used</strong>: {{ page.technologies | join: ", " }}</p>
 
-<a href={{ "/projects/" | relative_url }} class="back-arrow">
-    <i class="bi bi-arrow-left-circle-fill"></i> Back to Projects
+<a href="{{ '/projects/' | relative_url }}" class="back-link">
+  <i class="bi bi-arrow-left" aria-hidden="true"></i>
+  <span>Back to Projects</span>
 </a>
+
