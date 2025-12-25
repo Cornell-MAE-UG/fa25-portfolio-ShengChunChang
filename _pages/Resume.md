@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Angus (Sheng-Chun) Chang - Curriculum Vitae
-permalink: /cv/
+title: Angus (Sheng-Chun) Chang
+permalink: /resume/
 ---
-## Curriculum Vitae
+## Resume
 
 [Download my resume]({{ "/assets/Resume.pdf" | relative_url }}) in PDF format.
 

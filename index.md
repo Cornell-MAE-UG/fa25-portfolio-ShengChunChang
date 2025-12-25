@@ -14,7 +14,7 @@ title: Angus (Sheng-Chun) Chang
 
     <div class="hero-cta">
       <a class="hero-btn" href="{{ '/projects/' | relative_url }}">Projects</a>
-      <a class="hero-btn" href="{{ '/cv/' | relative_url }}">Resume</a>
+      <a class="hero-btn" href="{{ '/Resume/' | relative_url }}">Resume</a>
     </div>
   </div>
 </section>

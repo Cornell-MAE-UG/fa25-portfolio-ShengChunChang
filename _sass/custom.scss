@@ -487,3 +487,10 @@ main.container{
     max-width: 100%;
   }
 }
+
+.media-video{
+  width: 100%;
+  max-width: 300px;   /* change to 520 / 700 if you want */
+  height: auto;
+  display: block;
+}

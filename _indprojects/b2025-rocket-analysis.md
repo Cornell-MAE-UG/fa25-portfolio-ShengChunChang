@@ -1,12 +1,12 @@
 ---
 layout: project
-title: High-Speed Drone – Full CAD & Aerodynamic Analysis
+title: High-Speed Drone – EXTR V1
 description: A custom-designed high-speed drone frame built in Autodesk Fusion 360, focused on aerodynamics, pressure edurance, and real-world flight applications.
 technologies: [Audodesk Fusion 360, stream flow simulation]
 image: /assets/images/extr.png
 ---
 
-EXTR V1 is a conceptual high-speed racing drone that I fully designed in CAD, including the central fuselage, wing-like arms, and motor housings. I used CFD simulations to study airflow and friction over the body and propeller pods, then iterated the geometry to smooth flow separation and lower drag. This project showcases my skills in 3D modeling, design for aerodynamics, and simulation-driven refinement.
+<p><strong>EXTR V1</strong> is a conceptual high-speed racing drone that I fully designed in CAD, including the central fuselage, wing-like arms, and motor housings. I used CFD simulations to study airflow and friction over the body and propeller pods, then iterated the geometry to smooth flow separation and lower drag. This project showcases my skills in 3D modeling, design for aerodynamics, and simulation-driven refinement.
 
 <!-- Pressure / friction result -->
 <div>
