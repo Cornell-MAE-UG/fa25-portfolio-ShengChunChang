@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Angus (Sheng-Chun) Chang
-permalink: /resume/
+permalink: /Resume/
 ---
 ## Resume
 
