@@ -17,6 +17,7 @@ Mechanical engineering student focused on end-to-end product development, from p
 framing to CAD, prototyping. Skilled in hands-on 3D printing and CNC experience, and test
 planning to close the loop between analysis and hardware. Comfortable with GDT, DFM/DFA,
 and BOM creation. Proficient in MATLAB and Python for analysis and test automation.
+
 ---
 
 #### Education
