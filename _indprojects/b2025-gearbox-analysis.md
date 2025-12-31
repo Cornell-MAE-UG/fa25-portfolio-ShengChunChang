@@ -122,7 +122,7 @@ image: /assets/images/gearbox.png
   <p><strong>Tooth-count constraint (planetary geometry):</strong></p>
   <p style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;">
     N<sub>r</sub> = N<sub>s</sub> + 2N<sub>p</sub><br>
-    75 = 33 + 2(21) &nbsp;✓
+    75 = 33 + 2(21)
   </p>
 
   <p><strong>Reduction (ring fixed, sun input, carrier output):</strong></p>
