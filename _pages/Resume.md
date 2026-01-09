@@ -62,8 +62,8 @@ and BOM creation. Proficient in MATLAB and Python for analysis and test automati
 ---
 
 #### Certifications & Patents
-- Remote Pilot (FAA Part 107), FAA, 2025 
-- Lifeguard/CPR/AED, American Red Cross, 2025  
+- Remote Pilot (FAA Part 107), Federal Aviation Administration
+- Lifeguard/CPR/AED, American Red Cross
 - Total of 3 Utility Patents in Taiwan, Germany
 
 ---
