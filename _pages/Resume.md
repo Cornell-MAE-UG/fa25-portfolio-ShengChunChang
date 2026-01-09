@@ -8,7 +8,7 @@ permalink: /Resume/
 [Download my resume]({{ "/assets/Resume.pdf" | relative_url }}) in PDF format.
 
 
-**Email:** [angus23232323@gmail.com](mailto:angus23322323@gmail.com) | | | **Phone:** +1 978 530 8356
+**Email:** [angus23232323@gmail.com](mailto:angus23322323@gmail.com) | | | **Phone:** +1 978 530-8356
 
 ---
 
@@ -32,10 +32,19 @@ and BOM creation. Proficient in MATLAB and Python for analysis and test automati
 
 ---
 
+#### Relevant MAE Courses
+- Fluid Mechanics (MAE 3230)
+- System Dynamics (MAE 3260)
+- Thermodynamics (MAE 2210)
+- Mechanics of Materials (MAE 3270)
+- Intro to Aeronautics (MAE 3050)
+
+---
+
 #### Skills
 - **Software:** SolidWorks, Autodesk Fusion 360, Onshape, ANSYS  
 - **Programming:** Arduino, Python, Java, C++, MATLAB
-- **Tools:** 3D Printing, Laser Cutting 
+- **Tools:** 3D Printing, Laser Cutting, Soldering
 
 ---
 
@@ -52,16 +61,24 @@ and BOM creation. Proficient in MATLAB and Python for analysis and test automati
 
 ---
 
-#### Achievements & Certifications
+#### Certifications & Patents
 - Remote Pilot (FAA Part 107), FAA, 2025 
 - Lifeguard/CPR/AED, American Red Cross, 2025  
 - Total of 3 Utility Patents in Taiwan, Germany
 
 ---
 
+#### Awards
+- Top 300 Regeneron Science Talent Search Scholar, 2023
+- ISEF 1st Place Chemistry Special Award, American Chemical Society, 2022
+- 1st Place Columbia Business School Venture for All Model Entrepreneur Competition, 2023
+- Published in Internation Journal of High School Research, Vol 5, Issue 3
+
+---
+
 #### Extracurricular Activities
-- Member of Cornell University Autonomous Drone Project team
-- Volunteer for Taipei Critical Child Association - Charity Ambassador, Taipei, Taiwan
+- Mechanical Team Member of Cornell University Autonomous Drone Project team (CUAD)
+- Volunteer for Taipei Critical Child Association, Charity Ambassador, Taipei, Taiwan
 
 ---
 
