@@ -8,77 +8,72 @@ permalink: /Resume/
 [Download my resume]({{ "/assets/Resume.pdf" | relative_url }}) in PDF format.
 
 
-**Email:** [angus23232323@gmail.com](mailto:angus23322323@gmail.com) | | | **Phone:** +1 978 530-8356
-
----
-
-#### Objective
-Mechanical engineering student focused on end-to-end product development, from problem
-framing to CAD, prototyping. Skilled in hands-on 3D printing and CNC experience, and test
-planning to close the loop between analysis and hardware. Comfortable with GDT, DFM/DFA,
-and BOM creation. Proficient in MATLAB and Python for analysis and test automation.
-
 ---
 
 #### Education
-- **Cornell University**  
-  *Bachelor of Science in Mechanical Engineering*  
-  Expected Graduation Date: May, 2027
-
-
-- **Northfield Mount Hermon School**  
-  *High School Diploma*  
-  Graduation Date: May, 2023
+- **Cornell University, Ithaca, NY**  
+  *B.S. Mechanical Engineering*  
+  Expected May 2027
 
 ---
 
-#### Relevant MAE Courses
-- Fluid Mechanics (MAE 3230)
-- System Dynamics (MAE 3260)
-- Thermodynamics (MAE 2210)
-- Mechanics of Materials (MAE 3270)
-- Intro to Aeronautics (MAE 3050)
+#### Relevant Coursework
+- Statics & Mechanics of Solids
+- Mechanics of Materials
+- Mechanical Design
+- System Dynamics
+- Mechatronics
+- Thermodynamics
+- Fluid Mechanics
 
 ---
 
 #### Skills
-- **Software:** SolidWorks, Autodesk Fusion 360, Onshape, ANSYS  
-- **Programming:** Arduino, Python, Java, C++, MATLAB
-- **Tools:** 3D Printing, Laser Cutting, Soldering
+- **CAD/CAE:** SolidWorks, Fusion 360, Onshape, ANSYS  
+- **Manufacturing:** FDM 3D printing, CNC machining, tolerancing, fixtures, basic metrology (calipers)  
+- **Programming:** Python, MATLAB, C++, Arduino, Java  
+- **UAV:** FPV build + Betaflight tuning; payload integration; rapid iteration workflows  
+- **Certifications:** FAA Part 107 Remote Pilot; Red Cross Lifeguard-CPR/AED
 
 ---
 
-#### Research & Publication
-- **An "Artifical leaf" that can generate oxygen and electricity**:  
-  *[Patented in Taiwan & Germany]*  
-  *[Published on International Journal of High School Research, Vol.5, Issue 3]*  
-  
+#### Projects
+- **UAV Payload Mount & Modular Bracket System (2025)**  
+  - Designed a modular mounting system in CAD with DFM constraints; reduced part count from 9 to 6 and cut assembly time by 20%.  
+  - Manufactured and iterated 5 revisions (FDM + CNC); improved fit repeatability and reduced rework by 25% via tolerance and interface updates.  
+  - Validated through bench vibration checks and flight tests; supported payloads up to 250 g while maintaining stable tuning.
 
-- **Fabric structure utilizing protein denaturation and adhesion**:  
-  *[Patented in Taiwan]*  
-
-- **Tunable reflectance based on phase change metamaterial for structural color filter**
+- **Test Data Automation Tool (Python/MATLAB) (2024)**  
+  - Automated parsing and reporting for sensor logs; reduced per-test analysis time and standardized plots/exports for repeatable reporting.
 
 ---
 
-#### Certifications & Patents
-- Remote Pilot (FAA Part 107), Federal Aviation Administration
-- Lifeguard/CPR/AED, American Red Cross
-- Total of 3 Utility Patents in Taiwan, Germany
+#### Experience
+- **Autonomous Drone Project Team (CUAD) (Sep 2025 – Present)**  
+  *Mechanical Subteam Member*  
+  - Designed UAV frame and payload components in CAD; iterated 6 prototypes and reduced structural mass by 38% while meeting stiffness targets for stable flight.  
+  - Produced drawings with GD&T and maintained a 25+ part BOM; coordinated mounting interfaces with electrical/controls teams to meet envelope and fastener constraints.
+
+- **Bio-Inspired Fluid Lab, Cornell University (Sep 2025 – Present)**  
+  *Undergraduate Researcher, Bat Robot*  
+  - Supported CAD modeling and fabrication of lightweight wing structures; reduced assembly mass and improved alignment by via redesigned joints and fixtures.  
+  - Assisted testing across 30+ trials (setup, data capture, summarization); delivered results to guide next iteration.
+
+- **Cornell University (Sep 2024 – Jan 2025)**  
+  *Undergraduate Researcher, Clustering Greenland Seismological Data*  
+  - Created a Python pipeline to preprocess 8,000+ seismic events and produce 14 learned/engineered features with automated visualization outputs.  
+  - Performed unsupervised clustering using CNN embeddings + K-means; assessed clustering with silhouette score and stability checks, reducing manual analysis time.
 
 ---
 
-#### Awards
-- Top 300 Regeneron Science Talent Search Scholar, 2023
-- ISEF 1st Place Chemistry Special Award, American Chemical Society, 2022
-- 1st Place Columbia Business School Venture for All Model Entrepreneur Competition, 2023
-- Published in Internation Journal of High School Research, Vol 5, Issue 3
+#### Research & Intellectual Property
+- Artificial Leaf device generating oxygen and electricity (patents: Taiwan & Germany, issued)
+- Fabric structure based on protein denaturation and adhesion (patents: Taiwan, issued)
+- Tunable reflectance using phase-change metamaterials for structural color filtering
 
 ---
 
-#### Extracurricular Activities
-- Mechanical Team Member of Cornell University Autonomous Drone Project team (CUAD)
-- Volunteer for Taipei Critical Child Association, Charity Ambassador, Taipei, Taiwan
-
----
-
+#### Honors & Publications
+- Top 300 Regeneron Science Talent Search Scholar (2023)
+- ISEF 1st Place Chemistry Special Award (2022)
+- Published in International Journal of High School Research, Vol. 5, Issue 3
