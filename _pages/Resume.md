@@ -50,7 +50,7 @@ permalink: /Resume/
 
 #### Experience
 - **Autonomous Drone Project Team (CUAD) (Sep 2025 – Present)**  
-  *Lead Mechanical Member*  
+  *Lead Mechanical Engineer*  
 
   - Led mechanical execution from concept to flight-ready hardware, owning architecture decisions, CAD release, and build readiness.
   - Designed UAV frame and payload components in CAD; iterated 6 prototypes and reduced structural mass by 38% while meeting stiffness targets for stable flight.  
