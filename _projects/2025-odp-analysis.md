@@ -6,59 +6,49 @@ technologies: [Fusion 360]
 image: /assets/images/odp.jpg
 ---
 
-# Your Project Title
+<div>
+   <p><strong>MAE 2250</strong></p>
+<div>
+  <p><strong>Team Name: </strong>Lanternfly Killers Client(s): Cornell CALS Extension / E\&J Gallo Winery / National Grape</p>
+<div>
+<div>
+  <p><strong>Problem Statement: </strong> Just 1-2 adult spotted lantern flies (SLF) can taint a kilogram of grade slurry; with how prevalent they are, this can add up rapidly. Farmers are searching for ways of managing the SLF population without diminishing the potential crop yield. One way that the SLF population enters the crop yield is via the harvester during harvest. Finding a way to remove the flies off of the vines as the harvester intakes the grapes is important to prevent them from tainting the crop.</p>
+</div>
 
-**Team:** Latern Fly Killer
-**Client(s):** Cornell CALS Extension / E\&J Gallo Winery / National Grape  
+ <div>
+  <p><strong> Why it matters to the end user: </strong> If we reduce the amount of SLF present in the crop yield, we will be able to help the farmers financially, since less crop will be thrown away due to SLF contamination. In addition, there will be less scarcity of grape products, since more products will make their way to the shelves, allowing businesses to not lose customers or profit. The consumers will also benefit from the lower costs associated with the abundance of grape products.</p>
+</div>
 
-## Problem statement (most important)
+<div>
+  <p><strong> Proposed Directions: </strong> Concept A: Blower; A system of devices attached to the front of the harvester to blow the SLF off of the vines before they can enter the harvester. This could be similar to the end of a car wash, but less strong.
+Attached in front of the harvester pointing outward toward the grape vines. 
+A fan would blow a steady stream of air toward the vines, causing the SLF to fly outwards to avoid the irritation. 
+The flow of air would also stop the SLF from flying into the harvester after they left the vine. 
+This is better than the “status quo” of using chemicals to deter or remove SLF from the grapes, since the chemicals may end up contaminating the grape product, making it unusable.
+This is better than the “status quo” in the way that it doesn’t just scare away bugs but physically moves them to a singular destination and traps them.
 
-<Who is affected?> is trying to <do what?> in <where/when?>, but <what currently goes wrong?>.
-What challenge currently makes obvious solutions difficult to implement?
-Add enough detail to narrow down the scope to the part of the problem you want to focus on.  
+Concept B: Vibration Attraction Device; A set of towers vibrating at 60 Hz placed around the field to attract the SLF to liquid chemical traps. 
+Towers with mechanical vibration devices to attract the SLF.
+An electrified outer cage to shock the SLF when they touch the trap.
+A container below to catch the dead SLF for easy removal.
+This is better than the “status quo” because it eliminates SLF year-round without having to continuously spray.
+ This is better than the “status quo”  because it does not require any changes to the harvester and saves money because it is a one-time purchase, not a yearly cost. </p>
+</div>
 
-## Impact
-Give context for why solving this sub-problem addresses the client's user needs.
+ <div>
+  <p><strong> Key risks / unknowns: </strong> Damage to grapes/vines. Test by seeing how much wind store-bought grapes can take before falling off the vine. Lanternflies getting stuck in the blower. Test with different geometries of the mechanical design of the tube. Blower’s force is not strong enough to detach lanternflies from grapes. Take weight samples of lanternflies and their grab force to calculate the amount of wind force needed to remove them.</p>
+</div>
 
-## Proposed direction(s)
 
-### Concept A (primary): <1-line name>
 
-**What it is:** <1–2 sentences.>  
-**How it would be used:** <2–4 bullet “user flow” steps.>  
-**Why it’s better than the status quo:** <2–3 bullets.>  
-**End-of-semester proof-of-concept:** <what you can realistically build/test in MAE 2250.>  
 
-### Concepts B, C, etc.
+<p><strong> Our questions: </strong>
 
-<Only include if you want the client to compare two directions. Keep short.>
 
-## Key risks / unknowns
+1. When dealing with the SLFs, do they often stay on the vine when removing grapes?
+Decisions Affected: This would change our blower design, as we would need to prototype to make sure that we do not remove grapes as well as the SLFs.
+2. If SLF contamination occurs in grape products, do the machines in the processing facilities need to be shut down and cleaned afterwards?
+Decisions Affected: While this would not directly affect our decision making, this would clarify the impact on the end user, since we would be more aware of the negative impacts of SLF contamination, particularly in the cost of and time lost to temporarily shutting down facilities.
+3. Is there space in the fields to place a structure such as a tower?
+Decisions Affected: If we are not able to place something in the field, we may not be able to implement our vibration solution in the currently intended method.
 
-- <Risk 1> — why it matters, and how you’ll test it.
-- <Risk 2> — why it matters, and how you’ll test it.
-- <Risk 3> — why it matters, and how you’ll test it.
-
-## Questions for the client
-Focus on questions they can answer from lived experience.
-1. **<Question 1>**  
-   *Decision affected:* <what choice this answer changes for your team.>
-2. **<Question 2>**  
-   *Decision affected:* <what choice this answer changes for your team.>
-3. **<Question 3>**  
-   *Decision affected:* <what choice this answer changes for your team.>
-4. **<Question 4 (optional)>**  
-   *Decision affected:* <what choice this answer changes for your team.>
-
-\newpage
-
-# Optional page 2 — References and/or one figure
-
-## References
-
-- <Source 1 (URL or citation)>
-- <Source 2 (URL or citation)>
-
-## Figure
-
-<!-- ![<One-line caption. No full sentences.>](figures/<your_figure_filename>.png) -->
