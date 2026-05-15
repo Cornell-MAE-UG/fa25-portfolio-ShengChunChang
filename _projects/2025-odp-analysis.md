@@ -6,9 +6,13 @@ technologies: [Fusion 360]
 image: /assets/images/odp.jpg
 ---
 
+[View the MAE 2250 Overall Project](#)  
+*As part of my mechanical engineering coursework at Cornell University, this collaborative project focuses on designing an agricultural solution to mitigate Spotted Lanternfly (SLF) contamination. Our team, the Lanternfly Killers, developed a low-cost mechanical blower system that mounts to grape harvesters to safely clear invasive pests from crops without damaging the yield.*
+
 ## Table of Contents
 * [Client Pitch](#client-pitch)
 * [Functional Prototype](#functional-prototype)
+* [Client Report](#client-report)
 
 ---
 
@@ -60,3 +64,16 @@ We tested multiple aspects of our initial blower design:
 * **Material:** The 3D-printed PLA funnel was slightly bendable by hand, which is acceptable for this prototype but will need to be changed for a future prototype or final product.
 * **Force/Pattern:** We discovered that a sudden burst of air is more effective at displacing the "flighty" SLFs than a constant stream.
 * **Future Improvements:** To improve wind pressure and speed, we plan to add a planetary gearbox to step up the motor speed. We also need to add holes to the motor housing and open the back to increase airflow, expand hole tolerances, add tube fittings to prevent air leaks, and optimize the fan blade design.
+
+---
+
+## Client Report
+
+### Proposed Solution and Prototype
+Our final prototype is a custom blower system designed to be mounted directly onto a grape harvester. The device is powered by a 12V DC brushed motor housed within a 3D-printed PLA enclosure, and it utilizes a custom directional fan blade attached to a circular output funnel. The entire mechanism was constructed to act as a highly accessible, low-cost (approximately $55 total build cost), and low-maintenance attachment. 
+
+### How It Works and Is Used
+The device operates by sending sudden bursts of air toward the grape vines simultaneously as the harvester moves through the field. This airflow is designed to quickly agitate the flighty Spotted Lanternflies and physically blow them off the vines before they can enter the harvester. The airflow is calibrated to displace 23,743 cm³/s at a maximum speed of 10.28 m/s, which provides exactly enough force to knock off the insects in 1 to 2 seconds without ejecting or damaging the grapes themselves. It easily mounts onto the existing harvester infrastructure without interfering with the machine's primary use or obstructing the operator.
+
+### Conclusion
+Testing proves that this prototype is a highly viable product concept. The custom PLA housing demonstrated excellent material strength, showing completely elastic deformation after 177 Newtons of force was applied, proving it can easily handle the estimated 1
