@@ -1,9 +1,9 @@
 /* =========================
    THEME VARIABLES
    ========================= */
-$primary-color: #3a3f58;
-$background-color: #f7f8fa;
-$text-color: #333;
+$primary-color: #ffffff;
+$background-color: #000000;
+$text-color: #ffffff;
 
 @if $color_scheme == 'dark' {
   $primary-color: #333;
@@ -73,6 +73,7 @@ header{
   background: #000 !important;
   margin: 0;
   padding: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional: adds subtle separation */
 }
 
 header .navbar{
@@ -89,11 +90,13 @@ header .navbar{
   font-size: 1.5rem;
   font-weight: 700;
   padding: 0.65rem 0.9rem;
+  color: #fff !important; 
 }
 
 .navbar .navbar-brand{
   font-size: 1.25rem;
   font-weight: 800;
+  color: #fff !important;
 }
 
 /* kill any old transparency behavior */
@@ -161,13 +164,13 @@ header::before{ content: none !important; }
   display: inline-block;
   padding: 14px 34px;
   border-radius: 999px;
-  background: #000;
-  color: #fff;
+  background: #fff; /* Inverted for visibility */
+  color: #000; /* Inverted for visibility */
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.04em;
 }
-.hero-btn:hover{ opacity: 0.9; }
+.hero-btn:hover{ opacity: 0.8; }
 
 /* space below banner before first section heading */
 h2{ margin-top: 28px; }
@@ -183,7 +186,7 @@ h2{ margin-top: 28px; }
   display: block;
   float: left;
   margin: 10px 34px 22px 18px; /* left margin controls distance from left */
-  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 22px rgba(255,255,255,0.05); /* Softened for dark mode */
 }
 
 @media (max-width: 768px){
@@ -198,7 +201,7 @@ h2{ margin-top: 28px; }
   margin: 20px 25px 25px 0;
   max-width: 200px;
   border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+  box-shadow: 0 6px 14px rgba(255,255,255,0.05); /* Softened for dark mode */
 }
 
 /* Inline images helper */
@@ -296,6 +299,7 @@ main.container{
   z-index: 2000;
   background: #000 !important;
   padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Optional: adds subtle separation */
 }
 
 .site-footer .footer-contact,
@@ -368,7 +372,8 @@ main.container{
 .btn{
   display: inline-block;
   padding: 10px 20px;
-  color: $background-color;
+  color: #000; /* Adjusted for dark mode */
+  background: #fff; /* Added contrast background */
   text-decoration: none;
   border-radius: 5px;
   transition: background 0.3s;
@@ -406,7 +411,7 @@ main.container{
   align-items: center;
   gap: 0.55rem;
 
-  color: #111 !important;
+  color: #fff !important; /* Changed from #111 to #fff for dark mode */
   text-decoration: none !important;
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -434,7 +439,7 @@ main.container{
 }
 
 .back-link:focus-visible{
-  outline: 3px solid rgba(0,0,0,0.25);
+  outline: 3px solid rgba(255,255,255,0.25); /* Changed to white outline */
   outline-offset: 4px;
   border-radius: 8px;
 }
@@ -454,7 +459,7 @@ main.container{
   height: auto;
   display: block;
   border-radius: 10px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 14px rgba(255,255,255,0.05); /* Softened for dark mode */
 }
 
 /* Contain floats inside project pages */
@@ -494,5 +499,3 @@ main.container{
   height: auto;
   display: block;
 }
-
-
