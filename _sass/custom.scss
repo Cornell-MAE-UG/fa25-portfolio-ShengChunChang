@@ -1,14 +1,24 @@
 /* =========================
-   THEME VARIABLES
+   AEROSPACE / TACTICAL THEME
    ========================= */
-$primary-color: #ffffff;
-$background-color: #000000;
-$text-color: #ffffff;
+$tactical-bg:       #060a0e;
+$tactical-surface:  #0c1218;
+$tactical-panel:    #111820;
+$tactical-border:   rgba(0, 212, 170, 0.22);
+$tactical-accent:   #00d4aa;
+$tactical-amber:    #e8a020;
+$tactical-red:      #c44b4b;
+$tactical-text:     #e4eaef;
+$tactical-muted:    #7d8f9f;
+
+$primary-color:     $tactical-accent;
+$background-color:  $tactical-bg;
+$text-color:        $tactical-text;
 
 @if $color_scheme == 'dark' {
-  $primary-color: #333;
-  $background-color: #000;
-  $text-color: #fff;
+  $primary-color: $tactical-accent;
+  $background-color: $tactical-bg;
+  $text-color: $tactical-text;
 } @else if $color_scheme == 'aqua' {
   $primary-color: #598392;
   $background-color: #eff6e0;
@@ -22,62 +32,127 @@ $text-color: #ffffff;
 /* =========================
    GLOBAL BASE
    ========================= */
-:root{
-  --nav-h: 76px;      /* adjust if top bar height changes */
-  --contact-h: 64px;  /* adjust if bottom contact bar height changes */
+:root {
+  --nav-h: 76px;
+  --contact-h: 64px;
+  --accent: #{$tactical-accent};
+  --accent-dim: rgba(0, 212, 170, 0.15);
+  --amber: #{$tactical-amber};
+  --panel: #{$tactical-panel};
+  --border: #{$tactical-border};
 }
 
-.navbar, h1, h2, h3, h4, h5, h6{
-  font-family: 'Merriweather', serif;
+.navbar, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', 'Exo 2', sans-serif;
   font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
-body{
-  font-family: "Open Sans", 'Montserrat', 'Helvetica Neue', sans-serif;
-  line-height: 1.6;
+body {
+  font-family: 'Exo 2', 'Open Sans', sans-serif;
+  line-height: 1.65;
   background-color: $background-color;
   color: $text-color;
   margin: 0;
   padding: 0;
-
-  /* keep content visible under fixed bars */
   padding-top: var(--nav-h);
   padding-bottom: var(--contact-h);
+  position: relative;
 }
 
-p{ max-width: 75ch; }
+/* Tactical grid background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(rgba(0, 212, 170, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0, 212, 170, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+p { max-width: 75ch; }
+
+a {
+  color: $tactical-accent;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover { color: lighten($tactical-accent, 12%); }
+
+/* Section headings with HUD line */
+h2 {
+  margin-top: 28px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  color: $tactical-text;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, $tactical-accent 0%, transparent 100%);
+  }
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $tactical-accent;
+  margin: 0 0 8px;
+}
 
 /* =========================
    LAYOUT CONTAINER
    ========================= */
-.container{
+.container {
   max-width: 1100px;
   padding-left: 28px;
   padding-right: 28px;
 }
 
-@media (max-width: 768px){
-  .container{
+@media (max-width: 768px) {
+  .container {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
 
 /* =========================
-   FIXED TOP BAR (ALL PAGES) - PURE BLACK
+   FIXED TOP BAR
    ========================= */
-header{
+header {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 2000;
-  background: #000 !important;
+  background: rgba(6, 10, 14, 0.92) !important;
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional: adds subtle separation */
+  border-bottom: 1px solid $tactical-border;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-header .navbar{
-  background: #000 !important;
+header .navbar {
+  background: transparent !important;
   opacity: 1 !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -85,138 +160,440 @@ header .navbar{
   padding-bottom: 14px;
 }
 
-/* bigger nav links (Home / Projects / CV) */
-.navbar .nav-link{
-  font-size: 1.5rem;
-  font-weight: 700;
+.navbar .nav-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   padding: 0.65rem 0.9rem;
-  color: #fff !important; 
+  color: $tactical-muted !important;
+  position: relative;
+  transition: color 0.2s ease;
 }
 
-.navbar .navbar-brand{
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #fff !important;
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: $tactical-accent !important;
 }
 
-/* kill any old transparency behavior */
-.home .navbar.scrolled{
-  background: #000 !important;
-  backdrop-filter: none !important;
+.navbar .nav-link.active::before {
+  content: '▸';
+  position: absolute;
+  left: -2px;
+  color: $tactical-accent;
+  font-size: 0.65rem;
 }
-header::before{ content: none !important; }
+
+.navbar .navbar-brand {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: $tactical-text !important;
+  text-transform: uppercase;
+}
+
+.navbar .navbar-brand::before {
+  content: '◈ ';
+  color: $tactical-accent;
+}
+
+.home .navbar.scrolled {
+  background: transparent !important;
+}
+
+header::before { content: none !important; }
 
 /* =========================
    HERO
    ========================= */
-.hero{
+.hero {
   position: relative;
-  min-height: 42vh;
+  min-height: 72vh;
   display: grid;
   place-items: center;
   overflow: hidden;
+  border-bottom: 1px solid $tactical-border;
 }
 
-.hero-media{
+.hero-media {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transform: scale(1.02);
+  filter: saturate(0.7) contrast(1.1);
 }
 
-.hero-overlay{
+.hero-media-fallback {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background:
+    radial-gradient(circle at 70% 30%, rgba(0, 80, 60, 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(232, 160, 32, 0.08) 0%, transparent 40%),
+    linear-gradient(180deg, #0a1018 0%, #060a0e 60%, #040608 100%);
 }
 
-.hero-content{
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6, 10, 14, 0.3) 0%, rgba(6, 10, 14, 0.75) 70%, rgba(6, 10, 14, 0.95) 100%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 212, 170, 0.015) 2px,
+      rgba(0, 212, 170, 0.015) 4px
+    );
+}
+
+/* Radar sweep */
+.hero-radar {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.hero-radar::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140vmax;
+  height: 140vmax;
+  margin: -70vmax 0 0 -70vmax;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(0, 212, 170, 0.12) 18deg,
+    transparent 36deg
+  );
+  animation: radar-sweep 8s linear infinite;
+}
+
+@keyframes radar-sweep {
+  to { transform: rotate(360deg); }
+}
+
+/* HUD corner brackets */
+.hero-hud {
+  position: absolute;
+  inset: 24px;
+  pointer-events: none;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-color: $tactical-accent;
+    border-style: solid;
+    opacity: 0.5;
+  }
+
+  &::before {
+    top: 0; left: 0;
+    border-width: 2px 0 0 2px;
+  }
+
+  &::after {
+    bottom: 0; right: 0;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+.hero-hud-inner::before,
+.hero-hud-inner::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-color: $tactical-accent;
+  border-style: solid;
+  opacity: 0.5;
+}
+
+.hero-hud-inner::before {
+  top: 0; right: 0;
+  border-width: 2px 2px 0 0;
+}
+
+.hero-hud-inner::after {
+  bottom: 0; left: 0;
+  border-width: 0 0 2px 2px;
+}
+
+.hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
   color: #fff;
   padding: 70px 24px 50px;
+  max-width: 900px;
 }
 
-.hero-kicker{
+.hero-kicker {
   margin: 0 0 14px;
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: $tactical-accent;
 }
 
-.hero-name{
-  margin: 0 0 22px;
-  font-size: clamp(2rem, 6vw, 5rem);
+.hero-name {
+  margin: 0 0 12px;
+  font-size: clamp(2.4rem, 7vw, 5.5rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 0 40px rgba(0, 212, 170, 0.25);
+  line-height: 1.05;
+}
+
+.hero-tagline {
+  margin: 0 0 28px;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 400;
+  color: $tactical-muted;
   letter-spacing: 0.06em;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hero-cta{
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: $tactical-muted;
+  margin-bottom: 32px;
+  padding: 6px 14px;
+  border: 1px solid $tactical-border;
+  border-radius: 2px;
+  background: rgba(0, 212, 170, 0.05);
+}
+
+.hero-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $tactical-accent;
+  box-shadow: 0 0 8px $tactical-accent;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.hero-cta {
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-.hero-btn{
+.hero-btn {
   display: inline-block;
-  padding: 14px 34px;
-  border-radius: 999px;
-  background: #fff; /* Inverted for visibility */
-  color: #000; /* Inverted for visibility */
+  padding: 14px 32px;
+  border-radius: 2px;
+  background: transparent;
+  color: $tactical-accent;
   text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid $tactical-accent;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
-.hero-btn:hover{ opacity: 0.8; }
 
-/* space below banner before first section heading */
-h2{ margin-top: 28px; }
+.hero-btn:hover {
+  background: $tactical-accent;
+  color: $tactical-bg;
+  box-shadow: 0 0 24px rgba(0, 212, 170, 0.35);
+  opacity: 1;
+}
+
+.hero-btn-primary {
+  background: $tactical-accent;
+  color: $tactical-bg;
+
+  &:hover {
+    background: lighten($tactical-accent, 8%);
+    color: $tactical-bg;
+  }
+}
 
 /* =========================
-   IMAGES
+   FOCUS AREAS
    ========================= */
-.profile-image{
+.focus-section {
+  padding: 56px 0 24px;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+
+@media (max-width: 768px) {
+  .focus-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.focus-card {
+  position: relative;
+  padding: 28px 24px;
+  background: $tactical-panel;
+  border: 1px solid $tactical-border;
+  border-radius: 2px;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 12px; height: 12px;
+    border-top: 2px solid $tactical-accent;
+    border-left: 2px solid $tactical-accent;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 12px; height: 12px;
+    border-bottom: 2px solid $tactical-accent;
+    border-right: 2px solid $tactical-accent;
+  }
+
+  &:hover {
+    border-color: rgba(0, 212, 170, 0.45);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 212, 170, 0.1);
+  }
+}
+
+.focus-icon {
+  font-size: 1.8rem;
+  color: $tactical-accent;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.focus-card h3 {
+  font-size: 0.95rem;
+  margin: 0 0 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.focus-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: $tactical-muted;
+  max-width: none;
+  line-height: 1.55;
+}
+
+/* =========================
+   ABOUT SECTION
+   ========================= */
+.about-section {
+  padding: 48px 0 64px;
+}
+
+.about-section h2 { margin-top: 0; }
+
+.profile-image {
   width: 220px;
   height: 220px;
-  border-radius: 50%;
+  border-radius: 2px;
   object-fit: cover;
   display: block;
   float: left;
-  margin: 10px 34px 22px 18px; /* left margin controls distance from left */
-  box-shadow: 0 10px 22px rgba(255,255,255,0.05); /* Softened for dark mode */
+  margin: 10px 34px 22px 18px;
+  border: 2px solid $tactical-border;
+  box-shadow: 0 0 0 4px rgba(0, 212, 170, 0.06), 0 12px 40px rgba(0, 0, 0, 0.5);
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
 }
 
-@media (max-width: 768px){
-  .profile-image{
+@media (max-width: 768px) {
+  .profile-image {
     float: none;
     margin: 10px auto 18px;
   }
 }
 
-.project-image{
+.passion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 0;
+  clear: both;
+}
+
+.passion-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border: 1px solid $tactical-border;
+  border-radius: 2px;
+  color: $tactical-accent;
+  background: rgba(0, 212, 170, 0.06);
+}
+
+.passion-tag-amber {
+  color: $tactical-amber;
+  border-color: rgba(232, 160, 32, 0.35);
+  background: rgba(232, 160, 32, 0.06);
+}
+
+/* =========================
+   IMAGES
+   ========================= */
+.project-image {
   float: left;
   margin: 20px 25px 25px 0;
   max-width: 200px;
-  border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(255,255,255,0.05); /* Softened for dark mode */
+  border-radius: 2px;
+  border: 1px solid $tactical-border;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Inline images helper */
-.inline-image{
+.inline-image {
   max-width: 350px;
-  margin: 0px 25px 15px 25px;
+  margin: 0 25px 15px 25px;
   vertical-align: top;
+  border: 1px solid $tactical-border;
+  border-radius: 2px;
 
-  &-l{
+  &-l {
     @extend .inline-image;
     float: left;
     margin-left: 0;
   }
 
-  &-r{
+  &-r {
     @extend .inline-image;
     float: right;
     margin-right: 0;
@@ -224,14 +601,25 @@ h2{ margin-top: 28px; }
 }
 
 /* =========================
-   PROJECTS GRID (organized + uniform)
+   PROJECTS PAGE
    ========================= */
-main.container{
+main.container {
   max-width: 1200px !important;
   padding-top: 28px;
 }
 
-.project-gallery{
+.projects-header {
+  margin-bottom: 8px;
+}
+
+.section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, $tactical-border, transparent);
+  margin: 40px 0 8px;
+}
+
+.project-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(320px, 1fr));
   gap: 22px;
@@ -240,154 +628,186 @@ main.container{
   justify-items: center;
 }
 
-@media (min-width: 1100px){
-  .project-gallery{
+@media (min-width: 1100px) {
+  .project-gallery {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
   }
 }
 
-@media (max-width: 700px){
-  .project-gallery{
+@media (max-width: 700px) {
+  .project-gallery {
     grid-template-columns: 1fr;
   }
 }
 
-.gallery-item{
+.gallery-item {
   width: 100%;
   max-width: 360px;
   text-align: center;
+  transition: transform 0.25s ease;
 }
 
-.gallery-item a{
+.gallery-item a {
   text-decoration: none;
   display: block;
+  position: relative;
 }
 
-.gallery-item img{
+.gallery-item img {
   width: 100%;
-  height: 350px;        /* uniform size for BOTH sections */
+  height: 350px;
   object-fit: cover;
   display: block;
-  border-radius: 14px;
+  border-radius: 2px;
+  border: 1px solid $tactical-border;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.gallery-item p{
+.gallery-item p {
   margin: 12px 0 0;
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: $text-color;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $tactical-text;
 }
 
-.gallery-item:hover{
-  transform: translateY(-2px);
+.gallery-item:hover {
+  transform: translateY(-4px);
+}
+
+.gallery-item:hover img {
+  border-color: rgba(0, 212, 170, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 212, 170, 0.15);
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  top: 8px; left: 8px;
+  width: 10px; height: 10px;
+  border-top: 2px solid $tactical-accent;
+  border-left: 2px solid $tactical-accent;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gallery-item:hover::before {
+  opacity: 0.8;
 }
 
 /* =========================
-   FOOTER (fixed bottom contact bar)
+   FOOTER
    ========================= */
-.site-footer{
+.site-footer {
   margin-top: 40px;
   font-size: 0.95em;
   padding: 0;
 }
 
-/* fixed contact bar */
-/* Fixed bottom contact bar layout */
-.site-footer .footer-contact{
+.site-footer .footer-contact {
   position: fixed;
   left: 0; right: 0; bottom: 0;
   z-index: 2000;
-  background: #000 !important;
+  background: rgba(6, 10, 14, 0.94) !important;
   padding: 18px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Optional: adds subtle separation */
+  border-top: 1px solid $tactical-border;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .site-footer .footer-contact,
 .site-footer .footer-contact a,
 .site-footer .footer-contact span,
-.site-footer .footer-contact i{
-  color: #fff !important;
+.site-footer .footer-contact i {
+  color: $tactical-muted !important;
 }
 
-/* inner layout: left group + right copyright */
-.footer-contact-inner{
+.site-footer .footer-contact a:hover {
+  color: $tactical-accent !important;
+}
+
+.footer-contact-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
 }
 
-.footer-left{
+.footer-left {
   display: flex;
   align-items: center;
-  gap: 14px;        /* space between LinkedIn | Email */
-  flex-wrap: wrap;  /* allows wrap on smaller screens */
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-.footer-divider{
-  opacity: 0.45;
+.footer-divider { opacity: 0.35; }
+
+.footer-right {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400 !important;
+  opacity: 0.7;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
 }
 
-.footer-right{
-  font-weight: 400 !important;  /* normal */
-  opacity: 0.9;                 /* keep (optional) */
-  font-size: 0.95rem;           /* keep (optional) */
-}
+.site-footer .footer-contact a { text-decoration: none; }
+.site-footer .footer-contact a:hover { text-decoration: none; }
 
-
-/* make links clean */
-.site-footer .footer-contact a{
-  text-decoration: none;
-}
-.site-footer .footer-contact a:hover{
-  text-decoration: underline;
-}
-
-/* mobile: stack left group above copyright */
-@media (max-width: 768px){
-  .footer-contact-inner{
+@media (max-width: 768px) {
+  .footer-contact-inner {
     flex-direction: column;
     align-items: flex-start;
   }
-  .footer-right{
-    white-space: normal;
-  }
+  .footer-right { white-space: normal; }
 }
-
 
 /* =========================
-   SMALL UTILITIES (kept)
+   UTILITIES
    ========================= */
-.project-item img{
+.project-item img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 2px;
 }
 
-.project-item h3{
+.project-item h3 {
   margin-top: 15px;
   font-size: 1.25em;
 }
 
-.btn{
+.btn {
   display: inline-block;
   padding: 10px 20px;
-  color: #000; /* Adjusted for dark mode */
-  background: #fff; /* Added contrast background */
+  color: $tactical-bg;
+  background: $tactical-accent;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
-/* code highlight */
-.highlight{
-  background-color: #2d2d2d;
-  color: #e0e0e0;
+.btn:hover {
+  background: lighten($tactical-accent, 8%);
+  box-shadow: 0 0 16px rgba(0, 212, 170, 0.3);
+}
+
+.highlight {
+  background-color: #0d1520;
+  color: #c8d4de;
   padding: 10px 0;
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-radius: 2px;
+  border: 1px solid $tactical-border;
   overflow-x: auto;
 }
+
 .highlight .k  { color: #c792ea; }
 .highlight .nb { color: #82aaff; }
 .highlight .s  { color: #c3e88d; }
@@ -396,57 +816,44 @@ main.container{
 .highlight .p  { color: #89ddff; }
 .highlight .o  { color: #ff5370; }
 
-/* =========================
-   QUICK ADJUST NOTES (edit these)
-   ========================= */
-/* - Top bar height: change :root --nav-h
-   - Bottom contact height: change :root --contact-h
-   - Hero height: change .hero min-height
-   - Projects image height: change .gallery-item img height
-   - Profile picture size: change .profile-image width/height
-*/
 .back-link,
-.back-link:visited{
+.back-link:visited {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-
-  color: #fff !important; /* Changed from #111 to #fff for dark mode */
+  color: $tactical-accent !important;
   text-decoration: none !important;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   padding: 0.35rem 0;
   margin: 0.75rem 0 1.25rem;
   width: fit-content;
-
   transition: transform 160ms ease, opacity 160ms ease;
 }
 
-.back-link i{
+.back-link i {
   font-size: 1.1rem;
   transition: transform 160ms ease;
 }
 
-.back-link:hover{
+.back-link:hover {
   opacity: 0.9;
   transform: translateY(-1px);
   text-decoration: none !important;
 }
 
-.back-link:hover i{
-  transform: translateX(-8px);
-}
+.back-link:hover i { transform: translateX(-8px); }
 
-.back-link:focus-visible{
-  outline: 3px solid rgba(255,255,255,0.25); /* Changed to white outline */
+.back-link:focus-visible {
+  outline: 3px solid rgba(0, 212, 170, 0.35);
   outline-offset: 4px;
-  border-radius: 8px;
+  border-radius: 2px;
 }
 
-//Image format
-/* Responsive chart layout */
-.chart-grid{
+.chart-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 18px;
@@ -454,38 +861,31 @@ main.container{
   align-items: start;
 }
 
-.chart-grid img{
+.chart-grid img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
-  box-shadow: 0 6px 14px rgba(255,255,255,0.05); /* Softened for dark mode */
+  border-radius: 2px;
+  border: 1px solid $tactical-border;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Contain floats inside project pages */
-.project-content{
-  overflow: auto;   /* contains floats */
-}
+.project-content { overflow: auto; }
 
-/* Clear floats before headings and key blocks so layout doesn't jump */
 .project-content h2,
 .project-content h3,
 .project-content hr,
 .project-content .back-link,
-.project-content .back-arrow{
+.project-content .back-arrow {
   clear: both;
 }
 
-/* Optional: keep paragraphs from wrapping beside a float for too long */
-.project-content p{
-  clear: none;
-}
+.project-content p { clear: none; }
 
-/* Turn off floats on smaller screens (prevents half-width weird wrapping) */
-@media (max-width: 900px){
+@media (max-width: 900px) {
   .project-content .project-image,
   .project-content .inline-image-l,
-  .project-content .inline-image-r{
+  .project-content .inline-image-r {
     float: none !important;
     display: block;
     margin: 14px 0 18px 0 !important;
@@ -493,9 +893,22 @@ main.container{
   }
 }
 
-.media-video{
+.media-video {
   width: 100%;
-  max-width: 300px;   /* change to 520 / 700 if you want */
+  max-width: 300px;
   height: auto;
   display: block;
+  border: 1px solid $tactical-border;
+  border-radius: 2px;
+}
+
+/* Resume page links */
+main.container a:not(.back-link):not(.btn) {
+  color: $tactical-accent;
+  border-bottom: 1px solid rgba(0, 212, 170, 0.3);
+  text-decoration: none;
+
+  &:hover {
+    border-bottom-color: $tactical-accent;
+  }
 }

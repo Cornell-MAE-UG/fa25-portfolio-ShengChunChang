@@ -13,11 +13,14 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : Angus (Sheng-Chun) Chang
 description              : Angus (Sheng-Chun) Chang - Projects and CV 
-baseurl                  : "/fa25-portfolio-ShengChunChang" # Set this to your repo name 
+baseurl                  : "/fa25-portfolio-ShengChunChang" # Must match your GitHub repo name exactly
+
+# Set to true when you want school/collaborative projects visible again
+show_school_projects     : false
 
 # Theme and Style
 theme: jekyll-theme-minimal
-color_scheme: light # light/default, dark, or aqua
+color_scheme: dark # light/default, dark, or aqua
 
 sass:
   style: compressed
@@ -45,4 +48,14 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-seo-tag
+
+# School projects stay in _projects/ but are hidden from the site while
+# show_school_projects is false. To show them again, set that flag to true
+# and change published below to true.
+defaults:
+  - scope:
+      path: "_projects"
+      type: "projects"
+    values:
+      published: false
 

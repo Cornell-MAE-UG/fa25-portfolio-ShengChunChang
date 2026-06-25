@@ -3,7 +3,12 @@ layout: default
 title: Projects
 permalink: /projects/
 ---
-## Independent Projects
+
+<div class="projects-header">
+  <p class="section-label">// Project Archive</p>
+  <h2>Independent Projects</h2>
+</div>
+
 <div class="gallery-container">
   <div class="project-gallery">
     {% for indproject in site.indprojects %}
@@ -16,18 +21,25 @@ permalink: /projects/
     {% endfor %}
   </div>
 </div>
----
-## Collaborative Projects (school required)
+
+{% if site.show_school_projects %}
+<hr class="section-divider">
+
+<div class="projects-header">
+  <p class="section-label">// Collaborative Missions</p>
+  <h2>School Projects</h2>
+</div>
+
 <div class="gallery-container">
-<div class="project-gallery">
+  <div class="project-gallery">
     {% for project in site.projects %}
       <div class="gallery-item">
         <a href="{{ project.url | relative_url }}">
           <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" />
-          <p>{{ project.title}}</p>
+          <p>{{ project.title }}</p>
         </a>
       </div>
     {% endfor %}
+  </div>
 </div>
-</div>
-
+{% endif %}
